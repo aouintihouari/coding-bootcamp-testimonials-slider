@@ -1,0 +1,165 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Colors */
+:root {
+  --dark-blue: #202046;
+  --grayish-blue: #babacf;
+}
+
+/* Typography */
+body {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Inter", serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+.container {
+  overflow: hidden;
+  background-image: url("images/pattern-curve.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.image__container {
+  margin-block: 30px;
+  position: relative;
+  background-image: url("images/pattern-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 80%;
+  padding: clamp(1rem, 8vw, 3rem);
+}
+
+.image {
+  width: 254px;
+  height: 253px;
+}
+
+.controls {
+  padding: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  width: 80px;
+  height: 40px;
+  border-radius: 28px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+}
+
+.quote__container {
+  margin-block: 30px;
+  position: relative;
+  width: 70%;
+  margin-inline: auto;
+}
+
+.quote__container::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  background-image: url("images/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-position: top contain no-repeat;
+  background-size: 60px 50px;
+  top: -1.5rem;
+  left: 41%;
+  width: 100%;
+  height: 3rem;
+}
+
+.quote {
+  margin-bottom: 20px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  color: #202047;
+}
+
+.profession {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--grayish-blue);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+@media (min-width: 1440px) {
+  body {
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  .container {
+    margin: 0 auto;
+    flex-direction: row-reverse;
+    background-position: bottom left;
+  }
+
+  .name {
+    font-size: 20px;
+    line-height: 38px;
+  }
+
+  .profession {
+    font-size: 20px;
+    line-height: 38px;
+  }
+
+  .image {
+    width: 540px;
+    height: 540px;
+  }
+
+  .quote__container {
+    text-align: left;
+    margin-inline: 10% -10%;
+  }
+
+  .quote__container::before {
+    background-size: 120px 100px;
+    top: -3.5rem;
+    left: 10%;
+    height: 6rem;
+  }
+}
